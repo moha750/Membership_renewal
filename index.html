@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>شجرة عائلة نادي أدِيب</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="parent">
+                <div class="top-div">
+                   <img src="logo.png" alt="">
+                </div>
+                <!-- <ul class="progress-bar">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul> -->
+            </div> 
+
+            <form method="post" name="MyGroup">
+
+            <div class="main active">
+                <div class="content">
+                   <h4> تجديد عضوية نادي أدِيب💳 </h4>
+                </div>
+                <div class="input-text">
+                  <input id="input" type="text" placeholder="أسمك يـ أدِيب/ـه "  name="الأسم الثلاثي" require>
+                  <span> ✍🏻الأسم الثلاثي </span>
+              </div> 
+
+
+
+                <div class="button">
+                    <button type="button" class="create-workspace"> الي بعدو </button>
+                </div>
+            </div> 
+
+
+
+
+
+      <div class="main">
+
+        <div class="radio-wrapper-22">
+          <div class="content">
+            <h4> أهلاً <span id="usernameDisplay">أسم المستخدم</span>، هل حاب تكمل رحلتك مع نادي أدِيب🤔؟ </h4>
+         </div>
+<!-- النافذة المنبثقة الخامسة -->
+
+<label id="pepole" class="radio-wrapper" for="example-22">
+<input type="radio" class="radio-input" name="صورت ولا" id="example-22" value="تجديد العضوية"/>
+<span id="openPopup1" class="radio-tile">
+<span class="radio-icon">
+<i class="fa-solid fa-key"></i>
+</span>
+<span class="radio-label">تجديد العضوية</span>
+</span>
+</label>
+
+<div id="popup1" class="popup1">
+<div class="popup-content1">
+<span id="closePopup1" class="close">&times;</span>
+<h2 class="job"> هل حاب توضع صورتك في البطاقة🤔؟ </h2>
+
+<div class="wrapper">
+
+<input type="radio" name="تبي ولا" id="option-1" value="لا"> 
+<label for="option-1" class="option option-1">
+<div class="dot"></div>
+<span>لا</span>
+</label>
+
+
+
+<input type="radio" name="تبي ولا" id="option-2" value="نعم"> 
+<label for="option-2" class="option option-2">
+<div class="dot"></div>
+<span>نعم</span>
+</label>
+</div>
+
+
+<p id="errorMessage1" class="error-message1" style="display: none; font-size: 17px; color: #cc0000; font-family: b;"></p>
+
+<button type="button" id="cancelButton1"> مم، شكلي بغير رأيي </button>
+<button type="button" id="confirmButton1"> أعتمد يـ ريس </button>
+
+</div>
+</div>
+
+<div id="resultPopup1" class="popup1">
+<div class="popup-content1">
+<span id="closeResultPopup1" class="close">&times;</span>
+<h2 id="resultMessage1"></h2>
+<button type="button" id="proceed1" class="proceed-btn">خلصت</button>
+</div>
+</div>
+
+<!-- النافذة المنبثقة الخامسة -->
+
+
+<!-- النافذة المنبثقة الخامسة -->
+
+<label id="writing" class="radio-wrapper" for="example-33">
+<input type="radio" class="radio-input" name="صورت ولا" id="example-33" value="عدم التجديد"/>
+<span id="openPopup2" class="radio-tile">
+<span class="radio-icon">
+<i class="fa-solid fa-right-from-bracket"></i>
+</span>
+<span class="radio-label">عدم التجديد</span>
+</span>
+</label>
+
+<div id="popup2" class="popup2">
+<div class="popup-content2">
+<span id="closePopup2" class="close">&times;</span>
+<h2 class="job">هل حاب توضع صورتك في البطاقة🤔؟</h2>
+
+<div class="wrapper">
+
+<input type="radio" name="تبي ولا" id="option-3" value="لا، مو حاب أصور"> 
+<label for="option-3" class="option option-3">
+<div class="dot"></div>
+<span>لا، مو حاب أصور</span>
+</label>
+
+
+<input type="radio" name="تبي ولا" id="option-4" value="نعم، حاب أصور"> 
+<label for="option-4" class="option option-4">
+<div class="dot"></div>
+<span>نعم، حاب أصور</span>
+</label>
+</div>
+
+<!-- مكان عرض رسالة الخطأ -->
+<p id="errorMessage2" class="error-message2" style="display: none; font-size: 17px; color: #cc0000; font-family: b;"></p>
+
+<button type="button" id="cancelButton2">مم، شكلي بغير رأيي</button>
+<button type="button" id="confirmButton2">أعتمد يـ ريس</button>
+
+</div>
+</div>
+
+<div id="resultPopup2" class="popup2">
+<div class="popup-content2">
+<span id="closeResultPopup2" class="close">&times;</span>
+<h2 id="resultMessage2"></h2>
+<button type="button" id="proceed2" class="proceed-btn">خلصت</button>
+</div>
+</div>
+</div> 
+
+<!-- النافذة المنبثقة الخامسة -->
+
+        
+
+       </div> 
+
+
+
+            <div class="main">
+
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+
+
+                <div class="finish">
+              <!-- <button class="twitter">     <a href="https://twitter.com/AB_KFU" target="_blank"> الذهاب إلى تويتر  </a></button> -->
+              <button class="group">  <a href="https://chat.whatsapp.com/FsgdBOlOohd0sEsSyrBF3l" target="_blank"> 🏡تقدر ترجع لبيتك عائلتك الآن </a></button>
+                  <!-- <a href="https://twitter.com/AB_KFU" target="_blank" class="twitter">الذهاب إلى تويتر</a>
+                  <a href="https://web.telegram.org/a/#-1001825412173" target="_blank" class="group">الرجوع الى القروب</a> -->
+
+              </div>
+
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+  </form> 
+
+    <!-- Supabase SDK must load before your config and scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./supabase-config.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>

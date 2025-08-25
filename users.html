@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قائمة المسجلين - نادي أدِيب</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="card users-card">
+      <div class="parent">
+        <div class="top-div">
+          <img src="logo.png" alt="شعار نادي أدِيب">
+        </div>
+      </div>
+
+      <div class="list-toolbar">
+        <input id="searchInput" class="control" type="search" placeholder="أبحث بالأسم أو الحالة">
+        <select id="statusFilter" class="control">
+          <option value="">عرض الكُل</option>
+          <option value="تجديد العضوية">تجديد العضوية</option>
+          <option value="عدم التجديد">عدم التجديد</option>
+        </select>
+        <button id="refreshBtn" type="button" class="contro refresh-btn">تحديث الصفحة</button>
+      </div>
+
+      <div class="content">
+        <h4>قائمة الأعضاء</h4>
+      </div>
+
+      <div class="stats-cards" aria-label="إحصائيات الأعضاء">
+        <div class="stat-card total" role="group" aria-labelledby="stat-total-title">
+          <div id="stat-total-title" class="stat-title">الإجمالي</div>
+          <div class="stat-value"><span id="totalCount">0</span></div>
+        </div>
+        <div class="stat-card renew" role="group" aria-labelledby="stat-renew-title">
+          <div id="stat-renew-title" class="stat-title"><span class="dot"></span>تجديد</div>
+          <div class="stat-value"><span id="renewCount">0</span> <small id="renewPct">0%</small></div>
+        </div>
+        <div class="stat-card not-renew" role="group" aria-labelledby="stat-notrenew-title">
+          <div id="stat-notrenew-title" class="stat-title"><span class="dot"></span>عدم التجديد</div>
+          <div class="stat-value"><span id="notRenewCount">0</span> <small id="notRenewPct">0%</small></div>
+        </div>
+      </div>
+
+      <div id="tableWrap" class="table-wrap">
+        <div class="empty">جارٍ التحميل...</div>
+      </div>
+    </div>
+    
+    <!-- Back to Top Button (placed under the users-card) -->
+    <button id="backToTop" class="back-to-top" aria-label="الرجوع للأعلى" title="الرجوع للأعلى">الرجوع للأعلى</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="./users.js"></script>
+
+</body>
+</html>
