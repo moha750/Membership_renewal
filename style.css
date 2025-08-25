@@ -29,11 +29,10 @@
   font-family: bb;
  }
  .container{
-  min-height: 100vh;
-  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   background-image: url(BG.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,7 +44,7 @@
      background-color:#fff;
      border-radius:10px;
      padding:10px 20px;
-     margin: 20px;
+     margin: 20px 20px 80px;
  }
 
 h5 {
@@ -1736,10 +1735,13 @@ button {
 }
 
 .back-to-top {
-  position: static;
-  display: block;
-  margin: 14px auto 24px auto;
-  width: fit-content;
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  display: inline-block;
+  width: auto;
   border-radius: 9999px;
   border: none;
   padding: 12px 20px;
@@ -1749,6 +1751,17 @@ button {
   text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   cursor: pointer;
+  z-index: 10001;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(8px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .back-to-top:hover {

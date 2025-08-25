@@ -226,10 +226,40 @@ refreshBtn && refreshBtn.addEventListener('click', () => {
 // initial load + realtime
 fetchRegistrations().then(setupRealtime);
 
-// Back to Top button behavior (static button under users-card)
+// Back to Top button behavior (show only at page bottom)
 document.addEventListener('DOMContentLoaded', () => {
   const backToTopBtn = document.getElementById('backToTop');
   if (!backToTopBtn) return;
+
+  const toggleAtBottom = () => {
+    const doc = document.documentElement;
+    const scrollTop = window.scrollY || doc.scrollTop;
+    const viewportH = window.innerHeight || doc.clientHeight;
+    const fullH = doc.scrollHeight;
+    const threshold = 8; // px tolerance
+    const isScrollable = (fullH - viewportH) > threshold;
+    if (isScrollable && (scrollTop + viewportH >= fullH - threshold)) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  };
+
+  // Initial state
+  toggleAtBottom();
+  window.addEventListener('scroll', toggleAtBottom, { passive: true });
+  window.addEventListener('resize', toggleAtBottom);
+  window.addEventListener('load', toggleAtBottom);
+
+  // Re-evaluate when table content updates (async data render)
+  const tableWrapEl = document.getElementById('tableWrap');
+  if (tableWrapEl && window.MutationObserver) {
+    const obs = new MutationObserver(() => {
+      // Use rAF to wait for layout
+      requestAnimationFrame(toggleAtBottom);
+    });
+    obs.observe(tableWrapEl, { childList: true, subtree: true });
+  }
 
   // Smooth scroll to top on click
   backToTopBtn.addEventListener('click', (e) => {
